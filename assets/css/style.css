@@ -1,0 +1,22 @@
+* { box-sizing: border-box; }
+body { margin:0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: radial-gradient(circle at top left, #0d1b2a 0%, #071b2c 45%, #01050f 100%); color:#fff; }
+.glass { background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.2); backdrop-filter: blur(14px); box-shadow: 0 8px 40px rgba(0,0,0,0.5); border-radius: 15px; }
+.login-wrapper { padding: 24px; max-width: 380px; margin: 80px auto; text-align:center; }
+.login-wrapper h1 { margin:8px; font-size: 2rem; color: #e5f4ff; }
+.login-wrapper p { font-size: 0.95rem; color: #cbe7ff; }
+.login-wrapper label { display: block; text-align:left; margin: 12px 0 4px; color:#aad4ff; }
+.login-wrapper input { width:100%; padding: 10px; border: none; border-radius:8px; margin-bottom:8px; background: rgba(255,255,255,0.14); color:#fff; }
+.login-wrapper button { width:100%; padding:12px; border:none; border-radius:8px; background: linear-gradient(135deg, #1f8aff, #4ba1fd); color:#fff; font-weight:700; cursor:pointer; }
+.login-wrapper button:hover { filter: brightness(1.06); }
+.error { color:#ff7b7b; }
+.navbar { width:100%; background:rgba(2,8,18,0.9); display:flex; justify-content:space-between; align-items:center; padding:12px 20px; position:fixed; top:0; left:0; z-index:999; }
+.container { padding: 80px 26px 24px 26px; }
+.card { margin-bottom: 20px; border:1px solid rgba(255,255,255,0.18); border-radius:12px; background:rgba(11,20,39,0.75); padding:16px; }
+.table { width:100%; border-collapse:collapse; }
+.table th, .table td { padding:10px; border:1px solid rgba(255,255,255,0.15); text-align:left; }
+.btn { border:none; border-radius:8px; padding:8px 14px; cursor:pointer; color:white; font-weight:600; }
+.btn-primary { background: linear-gradient(135deg, #2268ff, #51adff); }
+.btn-danger { background: linear-gradient(135deg, #ff5c5c, #ef2e2e); }
+.btn-success { background: linear-gradient(135deg, #20d079, #24a87a); }
+.btn-warning { background: linear-gradient(135deg, #ffc14d, #f6b53d); }
+.select, .input, .textarea { width:100%; padding:10px; border:none; border-radius:8px; background: rgba(255,255,255,0.08); color:#fff; }
