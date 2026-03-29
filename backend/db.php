@@ -1,15 +1,27 @@
 <?php
-$DB_HOST = '127.0.0.1';
-$DB_NAME = 'polyguard_ai';
-$DB_USER = 'root';
-$DB_PASS = '';
 
 try {
-    $pdo = new PDO("mysql:host=$DB_HOST;dbname=$DB_NAME;charset=utf8mb4", $DB_USER, $DB_PASS, [
-        PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
-        PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
-    ]);
+    // Get database URL from Render environment
+    $databaseUrl = getenv('DATABASE_URL');
+
+    if (!$databaseUrl) {
+        die("DATABASE_URL not set");
+    }
+
+    // Parse the URL
+    $db = parse_url($databaseUrl);
+
+    $pdo = new PDO(
+        "pgsql:host=" . $db["host"] . 
+        ";port=" . $db["port"] . 
+        ";dbname=" . ltrim($db["path"], "/"),
+        $db["user"],
+        $db["pass"]
+    );
+
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
 } catch (PDOException $e) {
-    die('Database connection failed: ' . $e->getMessage());
+    die("Database connection failed: " . $e->getMessage());
 }
 ?>
