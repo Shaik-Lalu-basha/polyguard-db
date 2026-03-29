@@ -7,7 +7,8 @@ RUN apt-get update && apt-get install -y \
     && docker-php-ext-install pdo pdo_pgsql pgsql
 
 # Copy project files
-COPY /var/www/html/database/schema.sql
+COPY . /var/www/html/
+/var/www/html/database/schema.sql
 
 # Enable Apache rewrite
 RUN a2enmod rewrite
